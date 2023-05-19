@@ -3,10 +3,21 @@
 @import "@fontsource/didact-gothic";
 
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
+  html {
+    font-size: 19px;
+    line-height: 1.7;
+  }
+
+  body {
+    @apply bg-[#080F09] text-white font-[work];
+  }
+
   h1 {
-    @apply text-2xl;
+    @apply text-2xl font-[didat];
   }
   h2 {
     @apply text-xl;
@@ -15,9 +26,6 @@
     @apply text-lg;
   }
   a {
-    @apply text-blue-600 underline;
+    @apply text-[#4AF72F] underline;
   }
 }
-
-@tailwind components;
-@tailwind utilities;
