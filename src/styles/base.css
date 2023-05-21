@@ -5,6 +5,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.gpx{
+  @apply px-5;
+}
+
+
 @layer base {
   html {
     font-size: 19px;
