@@ -1,6 +1,5 @@
-@import "@fontsource/work-sans";
-@import "@fontsource/yrsa";
-@import "@fontsource/didact-gothic";
+@import "@fontsource/outfit";
+@import "@fontsource-variable/montserrat";
 
 @tailwind base;
 @tailwind components;
@@ -13,11 +12,11 @@
   }
 
   body {
-    @apply bg-[#080F09] text-white font-[work];
+    @apply bg-[#080F09] text-white font-work;
   }
 
   h1 {
-    @apply text-2xl font-[didat];
+    @apply text-2xl font-didat font-[700];
   }
   h2 {
     @apply text-xl;
