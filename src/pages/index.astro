@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 import "../styles/base.css";
+import Terminal from "../components/terminal/terminal.svelte";
 
 const rows = ["Languages: typescript, C, Java", "somethings more..."];
 ---
@@ -16,22 +17,23 @@ const rows = ["Languages: typescript, C, Java", "somethings more..."];
   </head>
   <body>
     <Header title={SITE_TITLE} />
-    <main
-      class="m-auto flex min-h-[75vh] w-[80%] flex-col gap-5 py-10 md:w-[50%] md:flex-row md:gap-0"
-    >
-      <div>
-        <img
-          src="https://github.com/Proibito.png "
-          alt="profile image"
-          class="text-md m-auto rounded-full md:w-[50%]"
-        />
-      </div>
-      <div>
-        <h1>{SITE_TITLE}</h1>
-        <div class="py-1">
-          {rows.map((el) => <p>{el}</p>)}
+    <main class="m-auto min-h-[75vh] w-[80%] flex-col gap-5 py-10 md:w-[50%]">
+      <div class="flex md:flex-row md:gap-0">
+        <div>
+          <img
+            src="https://github.com/Proibito.png "
+            alt="profile image"
+            class="text-md m-auto rounded-full md:w-[50%]"
+          />
+        </div>
+        <div>
+          <h1>{SITE_TITLE}</h1>
+          <div class="py-1">
+            {rows.map((el) => <p>{el}</p>)}
+          </div>
         </div>
       </div>
+      <Terminal client:idle />
     </main>
     <Footer />
   </body>
