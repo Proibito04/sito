@@ -8,6 +8,12 @@ import "../styles/base.css";
 import Terminal from "../components/terminal/terminal.svelte";
 
 const rows = ["Languages: typescript, C, Java", "somethings more..."];
+
+const interests: { title: string; hint?: string }[] = [
+  { title: "Programming 💻", hint: "obv" },
+  { title: "Financial 🪙", hint: "I am not a Guru" },
+  { title: "self growth 🧘", hint: "Like a real normie" },
+];
 ---
 
 <!DOCTYPE html>
@@ -17,13 +23,13 @@ const rows = ["Languages: typescript, C, Java", "somethings more..."];
   </head>
   <body>
     <Header title={SITE_TITLE} />
-    <main class="m-auto min-h-[75vh] w-[80%] flex-col gap-5 py-10 md:w-[50%]">
-      <div class="flex md:flex-row md:gap-0">
+    <main class="m-auto min-h-[75vh] w-[80%] py-10 lg:w-[50%]">
+      <div class="flex flex-col gap-5 md:flex-row md:gap-0">
         <div>
           <img
             src="https://github.com/Proibito.png "
             alt="profile image"
-            class="text-md m-auto rounded-full md:w-[50%]"
+            class="m-auto min-h-[150px] w-44 rounded-full md:w-[50%]"
           />
         </div>
         <div>
@@ -33,7 +39,34 @@ const rows = ["Languages: typescript, C, Java", "somethings more..."];
           </div>
         </div>
       </div>
-      <Terminal client:idle />
+
+      <div>
+        <!-- TODO make h2 bigger -->
+        <h2>Interest</h2>
+        <div class="flex gap-5">
+          {
+            interests.map((interest) => (
+              <div class="relative">
+                <a
+                  class="flex flex-grow basis-0 flex-col rounded bg-[#183324] px-5 py-7 text-center text-white no-underline shadow-md"
+                  href="."
+                >
+                  <span class="text-md">{interest.title}</span>
+                  <span class="text-xs text-gray-400">{interest.hint}</span>
+                </a>
+                <a class="absolute right-0 top-0 text-sm text-white border p-1 border-primary" href="./ciao">
+                  @
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="my-5">
+        <h2 class="mb-2">Discover the terminal!</h2>
+        <Terminal client:load />
+      </div>
     </main>
     <Footer />
   </body>
