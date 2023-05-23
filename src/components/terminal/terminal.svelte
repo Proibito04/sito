@@ -8,7 +8,7 @@
     const term = new terminal.Terminal({
       convertEol: true,
       fontFamily: `'Fira Mono', monospace`,
-      fontSize: "1em",
+      fontSize: 19,
       rows: 10,
       theme: ThemeTerminal,
       // rendererType: "dom" // default is canvas
@@ -21,13 +21,15 @@
 
 <style>
   @keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-  .term {
-    border: 1px solid white;
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
   :global(.xterm-viewport::-webkit-scrollbar) {
