@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      colors: {
+        primary: "#080F09"
+      },
       fontFamily: {
         didat: ["Montserrat", "Times New Roman, serif"],
         work: ["Outfit", "Times New Roman", "serif"],
