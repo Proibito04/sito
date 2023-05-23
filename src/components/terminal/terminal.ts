@@ -2,20 +2,27 @@ import type { Terminal, ITheme } from 'xterm';
 import 'xterm/css/xterm.css';
 
 let term: Terminal;
+const PREFIX = "\u001b[92m$>\u001b[0m";
+
 
 export const ThemeTerminal: ITheme = {
   background: '#080F09'
 }
 
 
-export function initializeTerminal(terminal: Terminal, element: HTMLElement) {
+export async function initializeTerminal(terminal: Terminal, element: HTMLElement) {
   term = terminal;
+  const fA = await import("xterm-addon-fit");
+  const fitAddon = new fA.FitAddon();
+  terminal.loadAddon(fitAddon);
   term.open(element);
+  fitAddon.fit();
   let command = '';
   let hasInput = false;
 
   print('Welcome *to* the *terminal!*');
 
+  let placeholder = `${PREFIX}\u001b[38;5;250m type \"help\" for start...`;
   const ANSI_COLOR_RESET = "\u001b[0m";
   const ANSI_COLOR_CYAN = "\u001b[36m";
   const ANSI_COLOR_YELLOW = "\u001b[33m";
@@ -35,7 +42,7 @@ export function initializeTerminal(terminal: Terminal, element: HTMLElement) {
 
       switch (key) {
       case '\r': // Enter key
-        term.writeln(`\r\n${promptSymbol}You typed: ${command} \u001b[0m`);
+        term.write(`\r\nYou typed: ${command} \u001b[0m\r\n${PREFIX} `);
         command = '';
         break;
       case '\u007F': // Backspace key
@@ -59,6 +66,5 @@ function print(text: string) {
   result = result.replace(/-([^-]+)-/g, '{$1}');
 
   term.writeln(result);
-
 }
 

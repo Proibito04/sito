@@ -13,7 +13,7 @@
       theme: ThemeTerminal,
       // rendererType: "dom" // default is canvas
     });
-    initializeTerminal(term, node);
+    await initializeTerminal(term, node);
   });
 </script>
 
