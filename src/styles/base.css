@@ -21,7 +21,7 @@
   }
 
   h1 {
-    @apply font-didat text-5xl;
+    @apply font-didat text-4xl;
   }
   h2 {
     @apply text-2xl;
@@ -40,6 +40,23 @@
   }
 
   a {
-    @apply text-[#4AF72F] underline;
+    @apply text-primary underline;
   }
+}
+
+@layer components {
+  .main-btn {
+    @apply rounded-lg bg-primary py-2 px-5 text-black;
+  }
+
+  .light-btn {
+    @apply rounded-lg bg-[#122114] font-medium  py-2 px-5 text-white;
+  }
+  .select2-search {
+    @apply rounded border border-gray-300;
+  }
+  .select2-results__group {
+    @apply text-lg font-bold text-gray-900;
+  }
+  /* ... */
 }
