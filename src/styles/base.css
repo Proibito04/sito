@@ -1,34 +1,44 @@
 @import "@fontsource/outfit";
+@import "@fontsource/poppins";
 @import "@fontsource-variable/montserrat";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.gpx{
+.gpx {
   @apply px-5;
 }
 
-
 @layer base {
   html {
-    font-size: 19px;
+    font-size: 17px;
     line-height: 1.7;
   }
 
   body {
-    @apply bg-primary text-white font-work;
+    @apply bg-BGprimary font-work text-white;
   }
 
   h1 {
-    @apply text-2xl font-didat font-[700];
+    @apply font-didat text-5xl;
   }
   h2 {
-    @apply text-xl;
+    @apply text-2xl;
   }
   h3 {
     @apply text-lg;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-didat font-[700];
+  }
+
   a {
     @apply text-[#4AF72F] underline;
   }

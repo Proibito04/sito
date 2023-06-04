@@ -4,13 +4,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#080F09"
+        BGprimary: "#080F09",
+        primary: "#1FE041",
+        primaryDark: "#bcdd9f",
       },
       fontFamily: {
         didat: ["Montserrat", "Times New Roman, serif"],
-        work: ["Outfit", "Times New Roman", "serif"],
+        work: ["Poppins", "Times New Roman", "serif"],
       },
+      
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };

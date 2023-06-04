@@ -3,7 +3,6 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-
 import "../styles/base.css";
 import Terminal from "../components/terminal/terminal.svelte";
 
@@ -24,7 +23,7 @@ const interests: { title: string; hint?: string }[] = [
   <body>
     <Header title={SITE_TITLE} />
     <main class="m-auto min-h-[75vh] w-[80%] py-10 lg:w-[50%]">
-      <div class="flex flex-col gap-5 md:flex-row md:gap-0">
+      <div class="mb-10 flex flex-col gap-5 md:flex-row md:gap-0">
         <div>
           <img
             src="https://github.com/Proibito.png "
@@ -42,21 +41,19 @@ const interests: { title: string; hint?: string }[] = [
 
       <div>
         <!-- TODO make h2 bigger -->
-        <h2>Interest</h2>
-        <div class="flex gap-5">
+        <h2 class="mb-2">My Interests</h2>
+        <div class="flex flex-wrap gap-5">
           {
             interests.map((interest) => (
-              <div class="relative">
+              <div class="relative  w-full flex-grow basis-[100%] rounded bg-[#183324] text-center shadow-md md:basis-0">
                 <a
-                  class="flex flex-grow basis-0 flex-col rounded bg-[#183324] px-5 py-7 text-center text-white no-underline shadow-md"
+                  class="flex flex-col px-4 py-7 text-white no-underline"
                   href="."
                 >
                   <span class="text-md">{interest.title}</span>
                   <span class="text-xs text-gray-400">{interest.hint}</span>
                 </a>
-                <a class="absolute right-0 top-0 text-sm text-white border p-1 border-primary" href="./ciao">
-                  @
-                </a>
+
               </div>
             ))
           }
