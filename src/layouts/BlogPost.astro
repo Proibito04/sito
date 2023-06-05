@@ -7,7 +7,8 @@ import FormattedDate from "../components/FormattedDate.astro";
 import "../styles/base.css";
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate } = Astro.props;
+console.log(pubDate);
 ---
 
 <html lang="en">
@@ -33,13 +34,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     <main class="mx-5 max-w-3xl md:m-auto">
       <div>
         <a href="../">
-          <button type="button" class="light-btn my-4">
-            &lt;- Blog</button
-          >
+          <button type="button" class="light-btn my-4"> &lt;- Blog</button>
         </a>
       </div>
       <article class="prose-md prose prose-invert">
-        {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+        <!-- {heroImage && <img width={720} height={360} src={heroImage} alt="" />} -->
         <h1 class="title">{title}</h1>
         <FormattedDate date={pubDate} />
         {
