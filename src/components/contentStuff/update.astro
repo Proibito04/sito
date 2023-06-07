@@ -1,0 +1,19 @@
+---
+export interface Props {
+  date?: Date;
+}
+
+const { date } = Astro.props;
+
+const formatted = date ? new Date(date) : null;
+---
+
+<p class="text-sm text-gray-400 my-0">
+  🧁 Update: {
+    formatted?.toLocaleDateString("en-us", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    }) ?? "👻"
+  }
+</p>
