@@ -8,7 +8,7 @@ const { date } = Astro.props;
 const formatted = date ? new Date(date) : null;
 ---
 
-<p class="text-sm text-gray-400 my-0">
+<p class="my-0 text-sm text-gray-400">
   🧁 Update: {
     formatted?.toLocaleDateString("en-us", {
       year: "numeric",
