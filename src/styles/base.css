@@ -48,11 +48,11 @@
 
 @layer components {
   .main-btn {
-    @apply rounded-lg bg-primary py-2 px-5 text-black;
+    @apply rounded-lg bg-primary px-5 py-2 text-black;
   }
 
   .light-btn {
-    @apply rounded-lg bg-[#122114] font-medium  py-2 px-5 text-white;
+    @apply rounded-lg bg-[#122114] px-5  py-2 font-medium text-white;
   }
   .select2-search {
     @apply rounded border border-gray-300;
