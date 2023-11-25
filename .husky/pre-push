@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-npm version patch --no-git-tag-version
-
-# Aggiunge il package.json modificato allo staging area di Git
-git add package.json
