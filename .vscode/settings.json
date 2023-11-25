@@ -1,3 +1,5 @@
 {
-  "cSpell.language": "en,en-GB,en-US,lorem"
+  "cSpell.language": "en,en-GB,en-US,lorem",
+  "cSpell.enableFiletypes": ["mdx"],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

@@ -17,17 +17,19 @@
   }
 
   body {
-    @apply bg-BGprimary font-work text-white;
+    @apply bg-BGprimary font-work text-[#f5f5f5];
   }
 
   h1 {
-    @apply font-didat text-4xl;
+    @apply font-didat !text-4xl;
   }
+
   h2 {
-    @apply text-2xl;
+    @apply !text-2xl;
   }
+
   h3 {
-    @apply text-lg;
+    @apply !text-lg;
   }
 
   h1,
@@ -36,7 +38,7 @@
   h4,
   h5,
   h6 {
-    @apply font-didat font-[700];
+    @apply font-didat !font-[700];
   }
 
   a {
@@ -58,5 +60,4 @@
   .select2-results__group {
     @apply text-lg font-bold text-gray-900;
   }
-  /* ... */
 }
