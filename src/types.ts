@@ -3,7 +3,7 @@ export interface Project {
   link: string;
   img?: ImageMetadata;
   technologies?: {
-    fronted?: string[],
-    backend?: string[]
-  }
+    fronted?: string[];
+    backend?: string[];
+  };
 }
