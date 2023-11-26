@@ -3,12 +3,10 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import placeholder from "../images/placeholder.jpg";
-import { Image } from "astro:assets";
-
-// import Terminal from "../components/terminal/terminal.svelte";
 
 import "../styles/base.css";
+import type { Project } from "../types";
+import Projects from "../components/Projects.astro";
 
 const rows = ["Languages: TypeScript, C, Java", "And more..."];
 
@@ -17,12 +15,6 @@ const interests: { title: string; hint?: string }[] = [
   { title: "Finance 🪙", hint: "I'm not a guru" },
   { title: "Self-growth 🧘", hint: "Like most people" },
 ];
-
-interface Project {
-  title: string;
-  link: string;
-  img?: ImageMetadata;
-}
 
 const workingProjects: Project[] = [
   { title: "The Bivacchio", link: "bivacchio" },
@@ -110,41 +102,9 @@ const finishedProjects: Project[] = [
         <div>
           {
             [
-              { text: "Currently Working", var: workingProjects },
-              { text: "Finished", var: finishedProjects },
-            ].map((project) => (
-              <div class="mt-5 first:m-0">
-                <p class="mb-2 font-bold">{project.text}</p>
-                <div class="flex flex-wrap gap-3">
-                  {project.var.map((el) => (
-                    <a
-                      href={`./projects/${el.link}`}
-                      class="inline-block w-full max-w-xs flex-grow basis-[100%] rounded bg-[#183324] p-2 text-center shadow-md transition hover:bg-green-950 md:basis-0"
-                    >
-                      <div>
-                        <div class="">
-                          <Image
-                            src={el.img ?? placeholder}
-                            alt={
-                              el.img
-                                ? `${el.title} project image`
-                                : "placeholder"
-                            }
-                          />
-                        </div>
-                      </div>
-
-                      <div class="p-2">
-                        <p class="text-md my-2">{el.title}</p>
-                        <p class="rounded bg-green-900 px-4 py-2 font-bold text-white">
-                          More Details
-                        </p>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            ))
+              { text: "Currently Working", project: workingProjects },
+              { text: "Finished", project: finishedProjects },
+            ].map((project) => <Projects project={project} />)
           }
         </div>
       </div>

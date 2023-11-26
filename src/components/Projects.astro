@@ -1,0 +1,50 @@
+---
+import type { Project } from "../types";
+import { Image } from "astro:assets";
+
+
+import placeholder from "../images/placeholder.jpg";
+interface Props {
+  project: {
+    text: string;
+    project: Project[];
+  };
+}
+
+const { project } = Astro.props;
+---
+
+<div class="mt-5 first:m-0">
+  <p class="mb-2 font-bold">{project.text}</p>
+  <div class="flex flex-wrap gap-3">
+    {
+      project.project.map((el) => (
+        <a
+          href={`./projects/${el.link}`}
+          class="inline-block w-full max-w-xs flex-grow basis-[100%] 
+          rounded bg-[#183324] p-2 text-center no-underline shadow-md
+          transition hover:bg-green-950 md:basis-0"
+        >
+          <div>
+            <div class="">
+              <Image
+                src={el.img ?? placeholder}
+                alt={el.img ? `${el.title} project image` : "placeholder"}
+              />
+            </div>
+          </div>
+
+          <div class="p-2">
+            <p class="text-md my-2">{el.title}</p>
+            <p
+              class="rounded  bg-green-900 px-4 py-2 font-bold text-white
+            "
+            >
+              More Details
+            </p>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</div>
