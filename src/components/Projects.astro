@@ -1,7 +1,7 @@
 ---
 import type { Project } from "../types";
 import { Image } from "astro:assets";
-
+import { Icon } from "astro-icon";
 
 import placeholder from "../images/placeholder.jpg";
 interface Props {
@@ -34,10 +34,39 @@ const { project } = Astro.props;
             </div>
           </div>
 
+          <p class="text-md my-2">{el.title}</p>
+
+          <div class="grid gap-1 p-2 text-left font-bold text-white pt-0">
+            {el.technologies && (
+              <div>
+                {el.technologies.fronted && (
+                  <>
+                    <p>Frontend</p>
+                    <div class="w-7">
+                      {el.technologies?.fronted?.map((icon) => (
+                        <Icon pack="logos" name={icon} />
+                      ))}
+                    </div>
+                  </>
+                )}
+
+                {el.technologies.backend && (
+                  <>
+                    <p>backend</p>
+                    <div class="w-7">
+                      {el.technologies?.backend?.map((icon) => (
+                        <Icon pack="logos" name={icon} />
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
+          </div>
+
           <div class="p-2">
-            <p class="text-md my-2">{el.title}</p>
             <p
-              class="rounded  bg-green-900 px-4 py-2 font-bold text-white
+              class="rounded  bg-green-900  py-2 font-bold text-white
             "
             >
               More Details
