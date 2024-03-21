@@ -3,10 +3,11 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-
 import "../styles/base.css";
 import type { Project } from "../types";
 import Projects from "../components/Projects.astro";
+import { Icon } from "astro-icon/components";
+import CuriosMouse from "../components/curiosMouse.svelte";
 
 const rows = ["Languages: TypeScript, C, Java", "And more..."];
 
@@ -21,7 +22,7 @@ const workingProjects: Project[] = [
     title: "The Bivacchio",
     link: "bivacchio",
     technologies: {
-      fronted: ["svelte-icon"],
+      fronted: ["svelte"],
     },
   },
 ];
@@ -39,13 +40,14 @@ const finishedProjects: Project[] = [
   </head>
   <body>
     <Header title={SITE_TITLE} />
+    <CuriosMouse client:load />
     <main class="m-auto min-h-[75vh] w-[80%] py-10 lg:w-[50%]">
       <div class="mb-10 flex flex-col gap-5 md:flex-row md:gap-0">
         <div>
           <img
-            src="https://github.com/Proibito.png "
+            src="https://github.com/Proibito04.png "
             alt="profile image"
-            class="m-auto min-h-[150px] w-44 rounded-full md:w-[50%]"
+            class="m-auto min-h-[150px] w-44 rounded-full md:w-[50%] pannocchia"
           />
         </div>
         <div>
@@ -59,29 +61,29 @@ const finishedProjects: Project[] = [
       <div>
         <!-- not ready yet -->
         <!-- <h2 class="mb-2">My Interests</h2>
-        <div class="flex flex-wrap gap-5">
-          {
-            interests.map((interest) => (
-              <div class="relative  w-full flex-grow basis-[100%] rounded bg-[#183324] text-center shadow-md md:basis-0">
-                <a
-                  class="flex flex-col px-4 py-7 text-white no-underline"
-                  href="."
-                >
-                  <span class="text-md">{interest.title}</span>
-                  <span class="text-xs text-gray-400">{interest.hint}</span>
-                </a>
+    <div class="flex flex-wrap gap-5">
+      {
+        interests.map((interest) => (
+          <div class="relative  w-full flex-grow basis-[100%] rounded bg-[#183324] text-center shadow-md md:basis-0">
+            <a
+              class="flex flex-col px-4 py-7 text-white no-underline"
+              href="."
+            >
+              <span class="text-md">{interest.title}</span>
+              <span class="text-xs text-gray-400">{interest.hint}</span>
+            </a>
 
-              </div>
-            ))
-          }
-        </div> -->
+          </div>
+        ))
+      }
+    </div> -->
       </div>
 
       <div class="my-5">
-        <h2>Posts</h2>
+        <h2>My Diary</h2>
         <p class="mb-2">The collection of my posts</p>
         <div
-          class="relative w-full flex-grow basis-[100%] rounded bg-[#183324] text-center shadow-md md:basis-0"
+          class="relative w-full flex-grow basis-[100%] rounded bg-[#183324] text-center shadow-md md:basis-0 pannocchia"
         >
           <a
             class="flex flex-col px-4 py-7 text-white no-underline"
@@ -93,9 +95,9 @@ const finishedProjects: Project[] = [
       </div>
 
       <!-- <div class="my-5">
-        <h2 class="mb-2">Discover the terminal!</h2>
-        <Terminal client:load />
-      </div> -->
+    <h2 class="mb-2">Discover the terminal!</h2>
+    <Terminal client:load />
+  </div> -->
 
       <!-- My project -->
       <div class="my-5">

@@ -6,7 +6,7 @@ import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import "../styles/base.css";
 type Props = CollectionEntry<"diary">["data"];
-
+import CuriosMouse from "../components/curiosMouse.svelte";
 const { title, description, pubDate, updatedDate } = Astro.props;
 ---
 
@@ -33,10 +33,12 @@ const { title, description, pubDate, updatedDate } = Astro.props;
     <main class="mx-5 max-w-3xl md:m-auto">
       <div>
         <a href="../">
-          <button type="button" class="light-btn my-4"> &lt;- Diary</button>
+          <button type="button" class="light-btn my-4 border border-green-900">
+            &lt;- Diary</button
+          >
         </a>
       </div>
-      <article class="prose-md prose prose-invert">
+      <article class="prose-md prose prose-invert mb-5">
         <!-- {heroImage && <img width={720} height={360} src={heroImage} alt="" />} -->
         <h1 class="title">{title}</h1>
         <FormattedDate date={pubDate} />

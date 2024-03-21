@@ -1,0 +1,11 @@
+---
+export interface Props {
+  date?: string;
+}
+const { date } = Astro.props;
+---
+
+<div>
+  <hr />
+  <span><span class="font-bold text-primary">Update</span>: {date}</span>
+</div>

@@ -21,8 +21,8 @@ module.exports = {
         primaryDark: "#bcdd9f",
       },
       fontFamily: {
-        didat: ["Montserrat", "Times New Roman, serif"],
-        work: ["Poppins", "Times New Roman", "serif"],
+        didat: ["'Space Mono', monospace;", "Times New Roman, serif"],
+        work: ["'Rubik', sans-serif;", "Times New Roman", "serif"]
       },
     },
   },

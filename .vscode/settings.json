@@ -1,5 +1,15 @@
 {
   "cSpell.language": "en,en-GB,en-US,lorem",
   "cSpell.enableFiletypes": ["mdx"],
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "spellright.language": ["en"],
+  "spellright.documentTypes": ["markdown", "latex", "plaintext", "mdx"],
+  "spellright.parserByClass": {
+    "astro": {
+      "parser": "code"
+    },
+    "mdx": {
+      "parser": "markdown"
+    }
+  }
 }

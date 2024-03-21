@@ -1,7 +1,7 @@
 ---
 import type { Project } from "../types";
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 
 import placeholder from "../images/placeholder.jpg";
 interface Props {
@@ -21,9 +21,9 @@ const { project } = Astro.props;
       project.project.map((el) => (
         <a
           href={`./projects/${el.link}`}
-          class="inline-block w-full max-w-xs flex-grow basis-[100%] 
-          rounded bg-[#183324] p-2 text-center no-underline shadow-md
-          transition hover:bg-green-950 md:basis-0"
+          class="pannocchia inline-block w-full max-w-xs flex-grow 
+          basis-[100%] rounded bg-[#183324] p-2 text-center no-underline
+          shadow-md transition hover:bg-green-950 md:basis-0"
         >
           <div>
             <div class="">
@@ -44,7 +44,7 @@ const { project } = Astro.props;
                     <p>Frontend</p>
                     <div class="w-7">
                       {el.technologies?.fronted?.map((icon) => (
-                        <Icon pack="logos" name={icon} />
+                        <Icon name={`devicon:${icon}`} class="h-7 w-auto" />
                       ))}
                     </div>
                   </>
@@ -53,9 +53,9 @@ const { project } = Astro.props;
                 {el.technologies.backend && (
                   <>
                     <p>backend</p>
-                    <div class="w-7">
+                    <div>
                       {el.technologies?.backend?.map((icon) => (
-                        <Icon pack="logos" name={icon} />
+                        <Icon name={`devicon:${icon}`} class="h-7 w-auto" />
                       ))}
                     </div>
                   </>
