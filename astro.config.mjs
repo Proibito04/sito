@@ -8,9 +8,15 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: "https://example.com",
-  integrations: [mdx(), sitemap(), tailwind({
-    config: {
-      applyBaseStyles: false
-    }
-  }), svelte(), icon()]
+  integrations: [
+    mdx(),
+    sitemap(),
+    tailwind({
+      config: {
+        applyBaseStyles: false,
+      },
+    }),
+    svelte(),
+    icon(),
+  ],
 });

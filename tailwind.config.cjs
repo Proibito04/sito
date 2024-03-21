@@ -22,7 +22,7 @@ module.exports = {
       },
       fontFamily: {
         didat: ["'Space Mono', monospace;", "Times New Roman, serif"],
-        work: ["'Rubik', sans-serif;", "Times New Roman", "serif"]
+        work: ["'Rubik', sans-serif;", "Times New Roman", "serif"],
       },
     },
   },
