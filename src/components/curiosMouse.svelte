@@ -19,6 +19,8 @@
   }
 
   onMount(() => {
+    if (matchMedia("(hover: none), (pointer: coarse)").matches) return;
+
     window.addEventListener("mousemove", (event) => {
       targetX = event.clientX - width / 2;
       targetY = event.clientY - width / 2;
